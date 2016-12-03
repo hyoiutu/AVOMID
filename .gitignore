@@ -27,3 +27,14 @@
 *.exe
 *.out
 *.app
+MIDIAvoided/Engine/
+MIDIAvoided/Example/
+MIDIAvoided/Debug/
+MIDIAvoided.sdf
+*.sln
+*.vcxproj
+*.filters
+Debug/MIDIAvoided.exp
+Debug/
+.vs/MIDIAvoided/v14/.suo
+MIDIAvoided/MIDIAvoided_log.html

@@ -1,0 +1,2 @@
+# AVOMID
+Avoid MIDI notes

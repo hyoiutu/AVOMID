@@ -1,5 +1,8 @@
 ﻿# include <Siv3D.hpp>
+# include <HamFramework.hpp>
+# include "Game.h"
 
+/*
 struct Note
 {
 	uint32 ch;
@@ -18,10 +21,13 @@ struct Item
 	uint32 height;
 	bool isTaken;
 };
+*/
 
+// シーンのキーの型と、共有データの型を指定
+using Scene = SceneManager<String>;
 
-
-void Main()
+/*
+void game()
 {
 
 	const uint32 PLAYER_MAX_HP = 200;
@@ -211,5 +217,24 @@ void Main()
 		player.draw(playerColor);
 		font(L"HP:" + Format(playerHP) + L"\n" +
 			L"アイテム:" + Format(numOfGetItem) + L"/" + Format(MAX_ITEM)).draw();
+	}
+}
+*/
+
+void Main()
+{
+	Scene manager(SceneManagerOption::ShowSceneName);
+
+	// シーンを設定
+	manager.add<Game>(L"Game");
+
+	// 特に指定しなければ、一番最初に追加したシーンから開始
+	// 別のシーンから始めたい場合は init()
+	manager.init(L"Game");
+
+	while (System::Update())
+	{
+		if (!manager.updateAndDraw())
+			break;
 	}
 }
